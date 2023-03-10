@@ -115,7 +115,6 @@ const secondSoundsGroup = [
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3'
   }
 ]
-
 const soundsName = {
   heatherKit: "Heather Kit",
   smoothPianoKit: "Smooth Piano Kit"
@@ -127,11 +126,30 @@ const soundsGroup = {
 
 
 const App = () => {
+  const [soundName, setSoundName] = React.useState("")
   const [sounds, setSounds] = React.useState(soundsGroup.heatherKit)
 
-  const play = () => {
-    
+
+  const styleActiveKey = (audio) => {
+    audio.parentElement.style.background = "linear-gradient(0deg, rgb(130, 130, 130), rgb(200, 200, 200))"
   }
+
+  const deactivateAudio = (audio) => {
+    setTimeout(() => {
+      audio.parentElement.style.background = "linear-gradient(0deg, rgb(160, 160, 160), rgb(230, 230, 230))"
+    }, 200)
+  }
+
+  const play = (key, sound) => {
+    setSoundName(sound)
+    const audio = document.getElementById(key)
+
+    styleActiveKey(audio)
+    audio.currentTime = 0
+    audio.play()
+    deactivateAudio(audio)
+  }
+
 
   return (
     <div>
