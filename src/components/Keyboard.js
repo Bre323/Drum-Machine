@@ -1,4 +1,5 @@
 import React from "react"
+import '../styles/Keyboard.css'
 
 
 const KeyboardKey = ({ play, sound }) => {

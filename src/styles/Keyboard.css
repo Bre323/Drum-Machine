@@ -1,0 +1,23 @@
+.keyboard {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    background: linear-gradient(0deg, rgb(60, 60, 60), rgb(130, 130, 130));
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 15px 20px;
+    padding: 5px;
+}
+
+.drum-pad {
+    height: 80px;
+    width: 100%;
+    background: linear-gradient(0deg, rgb(160, 160, 160), rgb(230, 230, 230));
+    border-radius: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.drum-pad:active {
+    background: linear-gradient(0deg, rgb(130, 130, 130), rgb(200, 200, 200));
+}
