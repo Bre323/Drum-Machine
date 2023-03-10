@@ -1,5 +1,6 @@
 import React from "react";
 import Keyboard from "./components/Keyboard";
+import DrumControl from "./components/DrumControl";
 
 
 const firstSoundsGroup = [
@@ -152,8 +153,11 @@ const App = () => {
 
 
   return (
-    <div>
-      <Keyboard play={play} sounds={sounds} />
+    <div id="drum-machine">
+      <div className="wrapper">
+        <Keyboard play={play} sounds={sounds} />
+        <DrumControl />
+      </div>
     </div>
   )
 }

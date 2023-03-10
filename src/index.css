@@ -8,3 +8,19 @@ body {
   background-color: rgb(70, 70, 110);
   font-size: 24px;
 }
+
+#drum-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 190px 30px;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  padding: 10px;
+  background: linear-gradient(0deg, rgb(80, 80, 80), rgb(150, 150, 150));
+  box-shadow: 3px 3px 5px;
+}
