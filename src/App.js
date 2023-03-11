@@ -128,6 +128,7 @@ const soundsGroup = {
 
 const App = () => {
   const [power, setPower] = React.useState(true)
+  const [volume, setVolume] = React.useState(1)
   const [soundName, setSoundName] = React.useState("")
   const [soundType, setSoundType] = React.useState("heatherKit")
   const [sounds, setSounds] = React.useState(soundsGroup[soundType])
@@ -157,16 +158,34 @@ const App = () => {
     setPower(!power)
   }
 
+  const handleVolumeChange = (event) => {
+    setVolume(event.target.value)
+  }
+
+  const setKeyVolume = () => {
+    const audios = sounds.map(sound => document.getElementById(sound.keyTrigger))
+
+    audios.forEach(audio => {
+      if(audio) {
+        audio.volume = volume
+      }
+    })
+  }
+
 
   return (
     <div id="drum-machine">
+      {setKeyVolume()}
+      
       <div className="wrapper">
         <Keyboard power={power} play={play} sounds={sounds} />
 
         <DrumControl 
           name={soundName || soundsName[soundType]} 
           power={power}
-          stop={stop} />
+          stop={stop}
+          volume={volume}
+          handleVolumeChange={handleVolumeChange} />
       </div>
     </div>
   )
