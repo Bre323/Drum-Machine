@@ -22,3 +22,17 @@
 .drum-pad:active {
     background: linear-gradient(0deg, rgb(130, 130, 130), rgb(200, 200, 200));
 }
+
+
+@media(max-width: 530px) {
+    .keyboard { 
+        height: 50%;
+        width: 90%;
+        margin: 0 5px 0 15px;
+    }
+
+    .drum-pad {
+        font-size: 20px;
+        height: 45px;
+    }
+}

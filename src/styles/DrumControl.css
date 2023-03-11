@@ -45,3 +45,27 @@
 .control > .change-button {
     background: linear-gradient(0deg, rgb(130, 130, 130) rgb(200, 200, 200));
 }
+
+
+@media(max-width: 530px) {  
+    .control {
+        height: 45%;
+        width: 90%;
+    }
+
+    .control > .power-button {
+        margin-top: 20px;
+    }
+
+    .control > input {
+        margin: 0;
+    }
+
+    .control > h2 {
+        margin: 5px;
+    }
+
+    .control > .change-button {
+        margin-bottom: 20px;
+    }
+}
