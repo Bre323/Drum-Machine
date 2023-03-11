@@ -127,8 +127,10 @@ const soundsGroup = {
 
 
 const App = () => {
+  const [power, setPower] = React.useState(true)
   const [soundName, setSoundName] = React.useState("")
-  const [sounds, setSounds] = React.useState(soundsGroup.heatherKit)
+  const [soundType, setSoundType] = React.useState("heatherKit")
+  const [sounds, setSounds] = React.useState(soundsGroup[soundType])
 
 
   const styleActiveKey = (audio) => {
@@ -151,12 +153,20 @@ const App = () => {
     deactivateAudio(audio)
   }
 
+  const stop = () => {
+    setPower(!power)
+  }
+
 
   return (
     <div id="drum-machine">
       <div className="wrapper">
-        <Keyboard play={play} sounds={sounds} />
-        <DrumControl />
+        <Keyboard power={power} play={play} sounds={sounds} />
+
+        <DrumControl 
+          name={soundName || soundsName[soundType]} 
+          power={power}
+          stop={stop} />
       </div>
     </div>
   )

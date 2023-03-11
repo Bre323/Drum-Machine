@@ -42,7 +42,7 @@
     background: linear-gradient(0deg, rgb(160, 160, 160), rgb(230, 230, 230));
 }
 
-.control > .change-button {
+.control > .change-button:active {
     background: linear-gradient(0deg, rgb(130, 130, 130) rgb(200, 200, 200));
 }
 

@@ -25,12 +25,16 @@ const KeyboardKey = ({ play, sound }) => {
 }
 
 
-const Keyboard = ({ play, sounds }) => {
+const Keyboard = ({ power, play, sounds }) => {
     return (
         <div className="keyboard">
             {
+                power ?
                 sounds.map((sound) => {
                     return <KeyboardKey play={play} sound={sound} key={sound.id} />
+                })
+                : sounds.map((sound) => {
+                    return <KeyboardKey play={play} sound={{...sound, url: "#"}} key={sound.id} />
                 })
             }
         </div>
