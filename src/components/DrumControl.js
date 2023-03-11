@@ -1,7 +1,7 @@
 import React from "react"
 import '../styles/DrumControl.css'
 
-const DrumControl = ({ name, power, stop, volume, handleVolumeChange }) => {
+const DrumControl = ({ name, power, stop, volume, handleVolumeChange, changeSoundsGroup }) => {
     return (
         <div className="control">
             <button className="power-button" onClick={stop}>
@@ -15,7 +15,11 @@ const DrumControl = ({ name, power, stop, volume, handleVolumeChange }) => {
             onChange={handleVolumeChange} />
 
             <h2 id="display">{name}</h2>
-            <button className="change-button">Change Sounds Group</button>
+
+            <button className="change-button" 
+            onClick={changeSoundsGroup}>
+                Change Sounds Group
+            </button>
         </div>
     )
 }

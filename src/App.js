@@ -172,11 +172,24 @@ const App = () => {
     })
   }
 
+  const changeSoundsGroup = () => {
+    setSoundName("")
+
+    if(soundType === "heatherKit") {
+      setSoundType("smoothPianoKit")
+      setSounds(soundsGroup.smoothPianoKit)
+    }
+    else {
+      setSoundType("heatherKit")
+      setSounds(soundsGroup.heatherKit)
+    }
+  }
+
 
   return (
     <div id="drum-machine">
       {setKeyVolume()}
-      
+
       <div className="wrapper">
         <Keyboard power={power} play={play} sounds={sounds} />
 
@@ -185,7 +198,8 @@ const App = () => {
           power={power}
           stop={stop}
           volume={volume}
-          handleVolumeChange={handleVolumeChange} />
+          handleVolumeChange={handleVolumeChange}
+          changeSoundsGroup={changeSoundsGroup} />
       </div>
     </div>
   )
